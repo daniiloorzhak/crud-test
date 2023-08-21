@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      author: "daniil"
+      id: "create-table-houses"
+      changes:
+        - createTable:
+            tableName: "owners"
+            columns:
+              - column:
+                  name: "house_id"
+                  type: "bigint"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "user_id"
+                  type: "bigint"
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: "owners"
+            baseColumnNames: "house_id"
+            constraintName: "fk_owners_house_id"
+            referencedTableName: "houses"
+            referencedColumnNames: "id"
+        - addForeignKeyConstraint:
+            baseTableName: "owners"
+            baseColumnNames: "user_id"
+            constraintName: "fk_owners_user_id"
+            referencedTableName: "users"
+            referencedColumnNames: "id"
+        - addPrimaryKey:
+            tableName: "owners"
+            columnNames: "house_id, user_id"

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-users.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-roles.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-houses.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-owners.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-residents.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-user-role.yaml"
